@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {increment, decrement} from "../actions/CounterActions"
 
 const Counter = (props) => {
+  console.log(props)
 
   const increment = () => {
     props.increment();
@@ -25,7 +26,7 @@ const Counter = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  count: state.count
+  count: state.counterReducer.count
 })
 
 // in this object, keys become prop names,
