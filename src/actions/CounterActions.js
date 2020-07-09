@@ -1,8 +1,8 @@
 // function doStuff() {
 //   return function (dispatch, getState) {
-    // dispatch actions here
-    // or fetch data
-    // or whatever
+// dispatch actions here
+// or fetch data
+// or whatever
 //   };
 // }
 
@@ -10,7 +10,7 @@
 // * In that case, call getState() and you’ll have the entire state to read as needed.
 
 const INCREMENT = "INCREMENT";
+const DECREMENT = "DECREMENT";
 
-const increment = () => ({ type: INCREMENT });
-
-export default increment;
+export const increment = () => ({ type: INCREMENT });
+export const decrement = () => ({ type: DECREMENT });

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import {connect} from "react-redux";
-import increment from "../actions/Increment"
-import decrement from "../actions/Decrement"
+import {increment, decrement} from "../actions/CounterActions"
 
 const Counter = (props) => {
 

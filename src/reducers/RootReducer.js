@@ -1,21 +1,7 @@
-const initialState = {
-  count: 0,
-};
+// Assuming you have more then one reducer
+import { combineReducers } from "redux";
+import products from "./ProductReducer";
 
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case "INCREMENT":
-      return {
-        count: state.count + 1
-      };
-    case "DECREMENT":
-      return {
-        count: state.count - 1
-      };
-
-    default:
-      return state;
-  }
-};
-
-export default rootReducer;
+export default combineReducers({
+  products,
+});
