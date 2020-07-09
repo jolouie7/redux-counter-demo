@@ -1,8 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+// import App from './App';
+import Counter from "./components/Counter"
 import * as serviceWorker from './serviceWorker';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import reducer from "./reducers/RootReducer"
+
+const store = createStore(reducer);
+
+const App = () => (
+  <Provider store={store}>
+    <Counter />
+  </Provider>
+)
 
 ReactDOM.render(
   <React.StrictMode>
