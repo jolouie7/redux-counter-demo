@@ -1,3 +1,5 @@
 const DECREMENT = "DECREMENT";
 
-export const decrement = () => ({ type: DECREMENT })
+const decrement = () => ({ type: DECREMENT })
+
+export default decrement;

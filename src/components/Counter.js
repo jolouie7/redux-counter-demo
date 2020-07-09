@@ -6,11 +6,11 @@ import decrement from "../actions/Decrement"
 const Counter = (props) => {
 
   const increment = () => {
-    props.dispatch(increment());
+    props.increment();
   };
 
   const decrement = () => {
-    props.dispatch(decrement());
+    props.decrement();
   };
 
   return (
@@ -29,4 +29,18 @@ const mapStateToProps = (state) => ({
   count: state.count
 })
 
-export default connect(mapStateToProps)(Counter);
+// in this object, keys become prop names,
+// and values should be action creator functions.
+// They get bound to `dispatch`.
+const mapDispatchToProps = {
+  increment,
+  decrement
+};
+
+// mapDispatchToProps as a function
+// * YOU PROBABLY DON'T NEED THIS IN MOST CASES - https://daveceddia.com/redux-mapdispatchtoprops-object-form/
+// const mapDispatchToProps = dispatch => ({
+//   signIn: (e, userInfo, history) => dispatch(signIn(e, userInfo, history))
+// });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
